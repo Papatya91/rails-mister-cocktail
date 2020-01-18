@@ -19,3 +19,10 @@ ingredients = ingredients_json["drinks"]
 ingredients.each do |ingredient|
   Ingredient.create(name: ingredient["strIngredient1"])
 end
+
+Cocktail.create(name: 'Malibu')
+Cocktail.create(name: 'Caipirihna')
+Coktail.create(name: 'Moscow mule')
+Cocktail.create(name: 'Vodka sour')
+Coktail.create(name: 'Gin tonic')
+Cocktail.create(name: 'Vodka mix')
