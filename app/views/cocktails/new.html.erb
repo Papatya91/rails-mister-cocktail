@@ -1,14 +1,21 @@
-<div class="container">
-  <h1>Create your awesome recipe</h1>
-  <%= form_for(@cocktail) do |f| %>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_url("cocktail3") %>);">
+  <%= @cocktail.name %>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_url("black.png")%>);">
+  <div class="container">
+    <h1>Create your awesome recipe</h1>
+    <%= form_for(@cocktail) do |f| %>
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
-    </div>
+  </div>
+   <%= f.submit class: 'btn btn-primary' %>
+
+</div>
 
 
-
-    <%= f.submit class: 'btn btn-primary' %>
   <% end %>
 </div>
 
