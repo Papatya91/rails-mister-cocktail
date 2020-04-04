@@ -1,7 +1,5 @@
 
 <div class="container"></div>
-
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_url("background.png")%>);">
   <div class="container">
     <h1>Get inspired <strong>by the big variety</strong> of cocktails!</h1>
@@ -14,7 +12,7 @@
 <div class="cards">
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_url("cocktail4.png")%>);">      
   <h1><%= cocktail.name %></h1>
-  <p><%= link_to "See details", cocktail@C_path(cocktail) %></p>
+  <p><%= link_to "See details", @cocktail_path(cocktail) %></p>
 </div>
 <% end %>
 
