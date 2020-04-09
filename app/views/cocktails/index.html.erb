@@ -1,10 +1,14 @@
 
 <div class="home-video-wrapper">
+<%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :name, input_html: {value: ""} %>   
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
 <%= video_tag "cocktails.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
   <div class="container">
     <h1> Get inspired <strong>by the big variety</strong> of cocktails!</h1>
     <p>Join the biggest community of cocktail lovers!</p>
-
+    
     <%= link_to "Invent your cocktail", new_cocktail_path(@cocktail), class: "btn btn-primary btn-flat" %></h1>
   </div>
 </div>

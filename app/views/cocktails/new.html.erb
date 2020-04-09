@@ -3,19 +3,39 @@
   <%= @cocktail.name %>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_url("black.png")%>);">
-  <div class="container">
-    <h1>Create your awesome recipe</h1>
-    <%= form_for(@cocktail) do |f| %>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <div class="form-card"  style="width: 600px";>
+        <h1>Create your awesome recipe.</h1>
+        <p>Master your own cocktail library!</p>
+
+        <%= simple_form_for @cocktail do |f| %>
+            <%= f.input :name %>
+            <%= f.association :ingredients  %>
+            <%= f.input :photo, as: :file %>
+            <%= f.input :doses, collection: 1..10 %>
+          <%= f.button :submit, "Add now", class: "btn btn-primary" %>
+          <% end %>
+    
+      </div>
+    </div>
   </div>
-   <%= f.submit class: 'btn btn-primary' %>
-
 </div>
+# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_url("black.png")%>);">
+#   <div class="container">
+#     <h1>Create your awesome recipe</h1>
+#     <%= form_for(@cocktail) do |f| %>
+#     <div class="form-group">
+#       <%= f.label :name %>
+#       <%= f.text_field :name, class: 'form-control' %>
+#   </div>
+#    <%= f.submit class: 'btn btn-primary' %>
+
+# </div>
 
 
-  <% end %>
-</div>
+#   <% end %>
+# </div>
 
